@@ -1,0 +1,13 @@
+<label>CREATE EPISODE INFORMATION: </label>
+<%= form_for @episode_guest do |f| %>
+  <%= f.label :Guest%>
+  <%= f.collection_select :guest_id, Guest.all, :id, :name %>
+    </br>
+   <%= f.label :Episode %>
+   <%= f.collection_select :episode_id, Episode.all, :id, :number%>
+     </br>
+   <%= f.label :rating %>
+  <%= f.text_field :rating%>
+    </br>
+  <%= f.submit "SUBMIT" %>
+<% end %>
