@@ -1,0 +1,10 @@
+<h1>Create an appearance</h1>
+<%= form_tag episode_form_path, method: 'post' do %>
+<%= label_tag :episode_id, "Choose an Episode" %>
+<%= select_tag :episode_id, options_from_collection_for_select(Episode.all, :id, :date) %>
+<%= label_tag :guest_id, "Choose a Guest" %>
+<%= select_tag :guest_id, options_from_collection_for_select(Guest.all, :id, :name) %>
+<%= label_tag  "Choose a Guest" %>
+<%= select_tag :guest_episode_id, options_from_collection_for_select([1..5], :id, :rating) %>
+<%= submit_tag "Create!" %>
+<% end %>
